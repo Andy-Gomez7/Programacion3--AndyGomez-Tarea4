@@ -8,7 +8,7 @@ public class HiloDescarga extends Thread{
     public void run(){
         System.out.println("Descargando "+getName()+"...");
 
-        for(int i = 1; i <= 10; i++){
+        for(int i = 1; i <= 100; i++){
             System.out.println(getName()+" "+i+"%");
             try{
                 Thread.sleep(2000);
