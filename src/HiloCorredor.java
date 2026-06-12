@@ -1,6 +1,5 @@
 public class HiloCorredor extends Thread{
-
-
+    
     public HiloCorredor(String Nombre){
         setName(Nombre);
     }
@@ -10,7 +9,6 @@ public class HiloCorredor extends Thread{
 
         for(int i = 1; i <= 10; i++){
             System.out.println("\n"+getName()+" avanzo al metro "+i);
-            
             
             try{
                 Thread.sleep(3000);

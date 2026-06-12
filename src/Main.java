@@ -1,5 +1,24 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        
+    }
+
+    public static void Descarga(){
+        HiloDescarga archivo1 = new HiloDescarga("archivo 1");
+        HiloDescarga archivo2 = new HiloDescarga("archivo 2");
+        HiloDescarga archivo3 = new HiloDescarga("archivo 3");
+
+        archivo1.start();
+        System.out.println();
+        archivo2.start();
+        System.out.println();
+        archivo3.start();
+        System.out.println();
+    }
+
+    public static void Corredores(){
         HiloCorredor juan = new HiloCorredor("Juan");
         HiloCorredor Pedro = new HiloCorredor("Pedro");
         HiloCorredor Ana = new HiloCorredor("Ana");
@@ -27,23 +46,18 @@ public class Main {
         System.out.println("\nestado de "+juan.getName()+": "+juan.getState());
         System.out.println("\nestado de "+Pedro.getName()+": "+Pedro.getState());
         System.out.println("\nestado de "+Ana.getName()+": "+Ana.getState());
-        System.out.println("\nestado de "+Carlos.getName()+": "+Carlos.getState());
+        System.out.println("\nestado de "+Carlos.getName()+": "+Carlos.getState());        
     }
 
-    public void Descarga(){
-        HiloDescarga archivo1 = new HiloDescarga("archivo 1");
-        HiloDescarga archivo2 = new HiloDescarga("archivo 2");
-        HiloDescarga archivo3 = new HiloDescarga("archivo 3");
+    public static void ValidarEdad(){
+        Scanner leer = new Scanner(System.in);
 
-        archivo1.start();
-        System.out.println();
-        archivo2.start();
-        System.out.println();
-        archivo3.start();
-        System.out.println();
-    }
-
-    public void Corredores(){
-        
+        try{
+            System.out.print("\nDigite su edad: ");
+            int edad = leer.nextInt();
+            UsuarioService.ValidarEdad(edad);
+        }catch(EdadInvalidaException e){
+            System.out.print("\n"+e.getMessage());
+        }
     }
 }
